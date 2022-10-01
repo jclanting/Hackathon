@@ -1,0 +1,74 @@
+.top-bar {
+    background: maroon;
+    height: 2.8rem;
+    padding: .5rem 0;
+  }
+  
+  .top-bar a{
+    color:white;
+    text-decoration: none;
+    font-size: 1.1rem;
+  }
+  
+  body {
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+    color: #616971;
+  }
+  
+  .center {
+    text-align: center;
+  }
+
+  
+.navbar-brand img{
+  height:6rem;
+}
+.navbar {
+ font-size: 1.5rem;
+ font-weight: 600;
+ letter-spacing: .1rem;
+ box-shadow: 0 .5rem .5rem rgba(0,0,0,.1);
+ z-index: 1;
+}
+.nav-item{
+ padding: .5rem;
+}
+
+
+.nav-link{
+ color: red!important;
+}
+
+.nav-link.active,.nav-link:hover{
+ color: white!important;
+}
+
+/*============= CAROUSEL =============*/
+
+#carousel {
+  box-shadow: 0 1rem 1rem rgba(0,0,0,.1);
+}
+.carousel-inner{
+  max-height: 38rem!important;
+}
+.carousel-item-next, .carousel-item-prev, .carousel-item.active{
+  transition: transform 1.2s ease;
+}
+
+.impoe{
+  color: orange;
+  font-weight: 600;
+  font-size:1.37em;
+}
+p{
+  font-size: .1rem;
+}
+.topic{
+  text-decoration: none;
+  font-size: .2rem;
+}
+/*---Change Carousel Transition Speed --*/
+
+
+/*-- Carousel Content --*/
