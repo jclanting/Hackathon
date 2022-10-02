@@ -1,12 +1,96 @@
 <!DOCTYPE html>
-<html lang ="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>About</title>
-    </head>
-    <body>
-        <p>
-            You can search for your classes in this section. 
-        </p>
-    </body>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/stl.css">
+    <!-- Bootstrap 4.5 CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+   
+	<!-- Mobile Friendly -->
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<!-- This code segment titles our app and styles our css -->
+	<title>Prof Finder</title>
+    <link rel="shortcut icon" href="https://i.imgur.com/lmHW6Pt.png">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+	<div class="top-bar">
+		<div class="container">
+			<div class="col-0 center">
+				<p><a href="https://howdy.tamu.edu/uPortal/normal/render.uP" target="_blank" class="topic">Prof Finder</a></p>
+			</div>
+		</div>
+	</div>
+
+   
+    
+    <!-- Navigation -->
+	<!-- This creates our drop down menu so that our users are more capable to navigate through the app without any outside help-->
+	<!---->
+    <nav class="navbar bg-dark navbar-dark navbar-expand-lg">
+		<div class="container">
+			<a href="hack-a-thon.html" class="navbar-brand"><img src="https://1000logos.net/wp-content/uploads/2022/02/Texas-AM-Aggies-logo.png" alt="Logo" title="Logo"></a>
+			<button class="navbar-toggler" type ="button" data-toggle="collapse" data-target="#navbarResponsive">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item"><a href="hack-a-thon.html" class="nav-link">Home&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+
+                    <li class="nav-item"><a href="about.html" class="nav-link">About&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                    
+                    <li class="nav-item"><a href="class_search.html" class="nav-link">Class Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+				</ul>
+
+			</div>
+		
+		</div>
+	</nav>
+
+
+<label for="classes">Choose a class that you want to see:</label>
+
+<select name="classes" id="class">
+  <option value="ENGR 102">ENGR 102</option>
+  <option value="MATH 151">MATH 151</option>
+  <option value="MATH 151-LAB">MATH 151 - LAB</option>
+  <option value="CHEM 107">CHEM 107</option>
+  <option value="CHEM 117">CHEM 117</option>
+  <option value="ENGL 104">ENGL 104</option>
+</select>
+
+
+<select name="days" id="day">
+    <option value="Monday">Monday</option>
+    <option value="Tuesday">Tuesday</option>
+    <option value="Wednesday">Wednesday</option>
+    <option value="Thursday">Thursday</option>
+    <option value="Friday">Friday</option>
+  </select>
+
+
+
+
+
+	<!-- End Navigation -->
+
+     <!-- jQuery -->
+	<script src="js/jquery-3.5.1.min.js"></script>
+	<!-- Bootstrap 4.5 JS -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Popper JS -->
+	<script src="js/popper.min.js"></script>
+	<!-- Font Awesome -->
+	<script src="js/all.min.js"></script>
+
+    
+</body>
 </html>
