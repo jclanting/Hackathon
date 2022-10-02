@@ -1,5 +1,5 @@
 .top-bar {
-    background: maroon;
+    background: #500000;
     height: 2.8rem;
     padding: .5rem 0;
   }
@@ -13,11 +13,15 @@
   body {
     overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
-    color: #616971;
+    color: #500000;
   }
   
   .center {
     text-align: center;
+  }
+
+  .bg-dark {
+    background-color: #500000;
   }
 
   
@@ -30,6 +34,7 @@
  letter-spacing: .1rem;
  box-shadow: 0 .5rem .5rem rgba(0,0,0,.1);
  z-index: 1;
+ background-color: #500000;
 }
 .nav-item{
  padding: .5rem;
@@ -37,11 +42,11 @@
 
 
 .nav-link{
- color: red!important;
+ color: white!important;
 }
 
 .nav-link.active,.nav-link:hover{
- color: white!important;
+ color: #500!important;
 }
 
 /*============= CAROUSEL =============*/
