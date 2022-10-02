@@ -43,11 +43,13 @@
 
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item"><a href="hack-a-thon.html" class="nav-link">Home&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+					<li class="nav-item"><a href="hack-a-thon.html" class="nav-link">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
 
-                    <li class="nav-item"><a href="about.html" class="nav-link">About&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;About&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
                     
-                    <li class="nav-item"><a href="class_search.html" class="nav-link">Class Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                    <li class="nav-item"><a href="class_search.html" class="nav-link">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Class Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+
+					<li class="nav-item"><a href="graphs.html" class="nav-link">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Graphs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
 				</ul>
 
 			</div>
@@ -59,502 +61,39 @@
 <label for="classes">Choose a class that you want to see:</label>
 
 <select name="classes" id="class">
-  <option value="engr 102">ENGR 102</option>
-  <option value="math 151 LEC">MATH 151 LEC</option>
-  <option value="math 151 LAB">MATH 151 LAB</option>
-  <option value="chem 107">CHEM 107</option>
-  <option value="chem 117">CHEM 117</option>
-  <option value="engl 104">ENGL 104</option>
+  <option value="ENGR 102">ENGR 102</option>
+  <option value="MATH 151 LEC">MATH 151 LEC</option>
+  <option value="MATH 151 LAB">MATH 151 LAB</option>
+  <option value="CHEM 107">CHEM 107</option>
+  <option value="CHEM 117">CHEM 117</option>
+  <option value="ENGL 104">ENGL 104</option>
 </select>
+<button type="submit" onclick="grabclass()">Submit</button>
 
 <br>
 <br>
 
-
-<label for="days">Choose the days (MON TUE WED THU FRI format):</label>
-
-<input type="text" name="days" id="day">
+<select name="days" id="day">
+    <option value="M">Monday</option>
+    <option value="T">Tuesday</option>
+    <option value="W">Wednesday</option>
+    <option value="R">Thursday</option>
+    <option value="F">Friday</option>
+  </select>
   <button type="submit" onclick="grabdays()">Submit</button>
 
-
-  <br>
-  <br>
-
-  
-  <p id ="yay" style="font-size: 1rem;"></p>
-
   <script text="text/javascript">
+    function grabclass(){
+        var c = document.getElementById("class")
+        var val = c.value
+
+    }
 
     function grabdays(){
-        var c = document.getElementById("class")
-        var clas = (c.value).toUpperCase()
-        var d = document.getElementById("day")
-        var days = d.value
-        var filt = []
-        var dat = [
-        "ENGR 102 , 203 , Craig M. Spears , MW , 12:40 , 2:30 , 4.5" , 
-"ENGR 102 , 207 , Elissa T. Morris , MF , 10:20 , 12:10 , 5" , 
-"ENGR 102 , 208 , Elissa T. Morris , MF , 12:40 , 2:30 , 5" , 
-"ENGR 102 , 212 , Natela G. Ostrovskaya , WF , 10:20 , 12:10 , 3.6" , 
-"ENGR 102 , 213 , Natela G. Ostrovskaya , WF , 12:40 , 2:30 , 3.6" , 
-"ENGR 102 , 215 , Anthony Cahill , TR , 8:00 , 9:50 , 4.3" , 
-"ENGR 102 , 216 , Rene' D. Elms , TR , 10:05 , 11:55 , 5" , 
-"ENGR 102 , 217 , Natela G. Ostrovskaya , TR , 12:10 , 2:00 , 3.6" , 
-"ENGR 102 , 218 , Rene' D. Elms , TR , 2:15 , 4:05 , 5" , 
-"ENGR 102 , 221 , Janie M. Moore , TR , 10:05 , 11:55 , 3.5" , 
-"ENGR 102 , 401 , Matthew K. Morte , MW , 8:00 , 9:50 , 4.5" , 
-"ENGR 102 , 402 , Matthew K. Morte , MW , 10:20 , 12:10 , 4.5" , 
-"ENGR 102 , 403 , Matthew K. Morte , MW , 12:40 , 2:30 , 4.5" , 
-"ENGR 102 , 412 , Jorge H. Lara Ruiz , WF , 10:20 , 12:10 , 2.8" , 
-"ENGR 102 , 416 , Galina V. Tsvetkova , MW , 10:20 , 12:10 , 3" , 
-"ENGR 102 , 421 , Susan N. Ritchey , MF , 10:20 , 12:10 , 4.8" , 
-"ENGR 102 , 426 , Richard C. Kurwitz , WF , 10:20 , 12:10 , 2.1" , 
-"ENGR 102 , 463 , Jacques Richard , TR , 12:10 , 2:00 , 2.6" , 
-"ENGR 102 , 466 , Jorge H. Lara Ruiz , TR , 8:00 , 9:50 , 2.8" , 
-"ENGR 102 , 468 , Craig M. Spears , TR , 12:10 , 2:00 , 4.5" , 
-"ENGR 102 , 469 , Craig M. Spears , TR , 2:15 , 4:05 , 4.5" , 
-"ENGR 102 , 472 , Tanya V. Wickliff , TR , 10:05 , 11:55 , 3.5" , 
-"ENGR 102 , 473 , Tanya V. Wickliff , TR , 12:10 , 2:00 , 3.5" , 
-"ENGR 102 , 474 , Tanya V. Wickliff , TR , 2:15 , 4:05 , 3.5" , 
-"ENGR 102 , 501 , Matthew K. Morte , MW , 8:00 , 9:50 , 4.5" , 
-"ENGR 102 , 502 , Matthew K. Morte , MW , 10:20 , 12:10 , 4.5" , 
-"ENGR 102 , 503 , Matthew K. Morte , MW , 12:40 , 2:30 , 4.5" , 
-"ENGR 102 , 504 , Matthew K. Morte , MW , 3:00 , 4:50 , 4.5" , 
-"ENGR 102 , 506 , Scott E. Lenfest , MF , 8:00 , 9:50 , 2.1" , 
-"ENGR 102 , 507 , Scott E. Lenfest , MF , 10:20 , 12:10 , 2.1" , 
-"ENGR 102 , 508 , Rene' D. Elms , MF , 12:40 , 2:30 , 5" , 
-"ENGR 102 , 509 , Rene' D. Elms , MF , 3:00 , 4:50 , 5" , 
-"ENGR 102 , 510 , Scott E. Lenfest , MW , 5:10 , 7:00 , 2.1" , 
-"ENGR 102 , 511 , Jorge H. Lara Ruiz , WF , 8:00 , 9:50 , 2.8" , 
-"ENGR 102 , 512 , Jorge H. Lara Ruiz , WF , 10:20 , 12:10 , 2.8" , 
-"ENGR 102 , 513 , Aitor Cruzado Garcia , WF , 12:40 , 2:30 , 5" , 
-"ENGR 102 , 514 , Aitor Cruzado Garcia , WF , 3:00 , 4:50 , 5" , 
-"ENGR 102 , 516 , Galina V. Tsvetkova , MW , 10:20 , 12:10 , 3" , 
-"ENGR 102 , 517 , Galina V. Tsvetkova , MW , 12:40 , 2:30 , 3" , 
-"ENGR 102 , 518 , Scott E. Lenfest , MW , 3:00 , 4:50 , 2.1" , 
-"ENGR 102 , 520 , Susan N. Ritchey , MF , 8:00 , 9:50 , 4.8" , 
-"ENGR 102 , 521 , Susan N. Ritchey , MF , 10:20 , 12:10 , 4.8" , 
-"ENGR 102 , 522 , Susan N. Ritchey , MF , 12:40 , 2:30 , 4.8" , 
-"ENGR 102 , 523 , Elissa T. Morris , MF , 3:00 , 4:50 , 5" , 
-"ENGR 102 , 524 , Anthony Cahill , MW , 5:10 , 7:00 , 4.3" , 
-"ENGR 102 , 525 , Natela G. Ostrovskaya , WF , 8:00 , 9:50 , 3.6" , 
-"ENGR 102 , 526 , Richard C. Kurwitz , WF , 10:20 , 12:10 , 2.1" , 
-"ENGR 102 , 527 , Richard C. Kurwitz , WF , 12:40 , 2:30 , 2.1" , 
-"ENGR 102 , 528 , Richard C. Kurwitz , WF , 3:00 , 4:50 , 2.1" , 
-"ENGR 102 , 529 , Johnathan T. McKenzie , MW , 10:20 , 12:10 , 4.3" , 
-"ENGR 102 , 530 , Saya Susindar , MW , 3:00 , 4:50 , 4" , 
-"ENGR 102 , 531 , Johnathan T. McKenzie , TR , 12:10 , 2:00 , 4.3" , 
-"ENGR 102 , 533 , Randy H. Brooks , MW , 8:00 , 9:50 , 4.9" , 
-"ENGR 102 , 534 , Bjorn H. Bangstein , M , 8:00 , 9:50 , 5" , 
-"ENGR 102 , 535 , Shana O. Shaw , MW , 1:30 , 3:20 , 3" , 
-"ENGR 102 , 536 , LaTasha T. Starr , MW , 1:00 , 2:50 , 4.7" , 
-"ENGR 102 , 537 , LaTasha T. Starr , TR , 1:00 , 2:50 , 4.7" , 
-"ENGR 102 , 538 , Dan Ball , TR , 8:00 , 9:50 , 3.4" , 
-"ENGR 102 , 539 , David R. McCarroll , TW , 3:30 , 5:20 , 2" , 
-"ENGR 102 , 549 , Ahmadreza Mahmoudzadeh , MW , 4:10 , 6:00 , 2.3" , 
-"ENGR 102 , 550 , Paul M. Koola , MW , 9:10 , 11:00 , 4.9" , 
-"ENGR 102 , 551 , Paul M. Koola , MW , 11:30 , 1:20 , 4.9" , 
-"ENGR 102 , 552 , Ahmadreza Mahmoudzadeh , MW , 1:50 , 3:40 , 2.3" , 
-"ENGR 102 , 553 , Samuel S. Villareal , TR , 9:35 , 11:25 , 2.9" , 
-"ENGR 102 , 554 , Samuel S. Villareal , TR , 12:45 , 2:35 , 2.9" , 
-"ENGR 102 , 555 , Samuel S. Villareal , TR , 3:55 , 5:45 , 2.9" , 
-"ENGR 102 , 556 , Leonel Alvarado , W , 8:00 , 9:50 , 5" , 
-"ENGR 102 , 557 , Randy H. Brooks , MW , 2:00 , 3:50 , 4.9" , 
-"ENGR 102 , 558 , LaTasha T. Starr , TR , 6:00 , 7:50 , 4.7" , 
-"ENGR 102 , 559 , Shana O. Shaw , MW , 10:00 , 11:50 , 3" , 
-"ENGR 102 , 562 , Jacques Richard , TR , 10:05 , 11:55 , 2.6" , 
-"ENGR 102 , 563 , Jacques Richard , TR , 12:10 , 2:00 , 2.6" , 
-"ENGR 102 , 564 , Jacques Richard , TR , 2:15 , 4:05 , 2.6" , 
-"ENGR 102 , 565 , Jacques Richard , TR , 4:20 , 6:10 , 2.6" , 
-"ENGR 102 , 566 , Jorge H. Lara Ruiz , TR , 8:00 , 9:50 , 2.8" , 
-"ENGR 102 , 567 , Jorge H. Lara Ruiz , TR , 10:05 , 11:55 , 2.8" , 
-"ENGR 102 , 568 , Craig M. Spears , TR , 12:10 , 2:00 , 4.5" , 
-"ENGR 102 , 569 , Craig M. Spears , TR , 2:15 , 4:05 , 4.5" , 
-"ENGR 102 , 570 , Craig M. Spears , TR , 4:20 , 5:10 , 4.5" , 
-"ENGR 102 , 572 , Tanya V. Wickliff , TR , 10:05 , 11:55 , 3.5" , 
-"ENGR 102 , 573 , Tanya V. Wickliff , TR , 12:10 , 2:00 , 3.5" , 
-"ENGR 102 , 574 , Tanya V. Wickliff , TR , 2:15 , 4:05 , 3.5" , 
-"ENGR 102 , 575 , Tanya V. Wickliff , TR , 4:20 , 6:10 , 3.5" , 
-"ENGR 102 , 576 , Jon P. Elizondo , TR , 8:00 , 9:50 , 5" , 
-"ENGR 102 , 577 , Jon P. Elizondo , TR , 10:05 , 11:55 , 5" , 
-"ENGR 102 , 578 , Jon P. Elizondo , TR , 12:10 , 2:00 , 5" , 
-"ENGR 102 , 579 , Jon P. Elizondo , TR , 2:15 , 4:05 , 5" , 
-"ENGR 102 , 580 , Johnathan T. McKenzie , TR , 4:20 , 6:10 , 4.3" , 
-"MATH 151 LEC , 201 , Andrea Bonito , TR , 12:45 , 2:00 , 3.4" , 
-"MATH 151 LEC , 202 , Andrea Bonito , TR , 12:45 , 2:00 , 3.4" , 
-"MATH 151 LEC , 205 , Chris Gartland , TR , 2:20 , 3:35 , 4.1" , 
-"MATH 151 LEC , 206 , Chris Gartland , TR , 2:20 , 3:35 , 4.1" , 
-"MATH 151 LEC , 501 , Sinjini Sengupta , MWF , 11:30 , 12:20 , 4.8" , 
-"MATH 151 LEC , 502 , Sinjini Sengupta , MWF , 11:30 , 12:20 , 4.8" , 
-"MATH 151 LEC , 503 , Sinjini Sengupta , MWF , 11:30 , 12:20 , 4.8" , 
-"MATH 151 LEC , 504 , Sinjini Sengupta , MWF , 11:30 , 12:20 , 4.8" , 
-"MATH 151 LEC , 505 , Sinjini Sengupta , MWF , 11:30 , 12:20 , 4.8" , 
-"MATH 151 LEC , 506 , Sinjini Sengupta , MWF , 11:30 , 12:20 , 4.8" , 
-"MATH 151 LEC , 507 , Sinjini Sengupta , MWF , 11:30 , 12:20 , 4.8" , 
-"MATH 151 LEC , 508 , Sinjini Sengupta , MWF , 11:30 , 12:20 , 4.8" , 
-"MATH 151 LEC , 509 , Sinjini Sengupta , MWF , 11:30 , 12:20 , 4.8" , 
-"MATH 151 LEC , 510 , Sinjini Sengupta , MWF , 12:40 , 1:30 , 4.8" , 
-"MATH 151 LEC , 511 , Sinjini Sengupta , MWF , 12:40 , 1:30 , 4.8" , 
-"MATH 151 LEC , 512 , Sinjini Sengupta , MWF , 12:40 , 1:30 , 4.8" , 
-"MATH 151 LEC , 513 , Sinjini Sengupta , MWF , 12:40 , 1:30 , 4.8" , 
-"MATH 151 LEC , 514 , Sinjini Sengupta , MWF , 12:40 , 1:30 , 4.8" , 
-"MATH 151 LEC , 515 , Sinjini Sengupta , MWF , 12:40 , 1:30 , 4.8" , 
-"MATH 151 LEC , 516 , Sinjini Sengupta , MWF , 12:40 , 1:30 , 4.8" , 
-"MATH 151 LEC , 517 , Sinjini Sengupta , MWF , 12:40 , 1:30 , 4.8" , 
-"MATH 151 LEC , 518 , Sinjini Sengupta , MWF , 12:40 , 1:30 , 4.8" , 
-"MATH 151 LEC , 519 , Justin Cantu , TR , 12:45 , 2:00 , 5" , 
-"MATH 151 LEC , 520 , Justin Cantu , TR , 12:45 , 2:00 , 5" , 
-"MATH 151 LEC , 521 , Justin Cantu , TR , 12:45 , 2:00 , 5" , 
-"MATH 151 LEC , 522 , Justin Cantu , TR , 12:45 , 2:00 , 5" , 
-"MATH 151 LEC , 523 , Justin Cantu , TR , 12:45 , 2:00 , 5" , 
-"MATH 151 LEC , 524 , Justin Cantu , TR , 12:45 , 2:00 , 5" , 
-"MATH 151 LEC , 525 , Justin Cantu , TR , 12:45 , 2:00 , 5" , 
-"MATH 151 LEC , 526 , Justin Cantu , TR , 12:45 , 2:00 , 5" , 
-"MATH 151 LEC , 527 , Justin Cantu , TR , 12:45 , 2:00 , 5" , 
-"MATH 151 LEC , 528 , Constantin Onica , TR , 11:10 , 12:25 , 3.5" , 
-"MATH 151 LEC , 529 , Constantin Onica , TR , 11:10 , 12:25 , 3.5" , 
-"MATH 151 LEC , 530 , Constantin Onica , TR , 11:10 , 12:25 , 3.5" , 
-"MATH 151 LEC , 531 , Constantin Onica , TR , 11:10 , 12:25 , 3.5" , 
-"MATH 151 LEC , 532 , Constantin Onica , TR , 11:10 , 12:25 , 3.5" , 
-"MATH 151 LEC , 533 , Constantin Onica , TR , 11:10 , 12:25 , 3.5" , 
-"MATH 151 LEC , 534 , Constantin Onica , TR , 11:10 , 12:25 , 3.5" , 
-"MATH 151 LEC , 535 , Constantin Onica , TR , 11:10 , 12:25 , 3.5" , 
-"MATH 151 LEC , 536 , Constantin Onica , TR , 11:10 , 12:25 , 3.5" , 
-"MATH 151 LEC , 537 , Liwei Chen  , MWF , 9:10 , 10:00 , 2.1" , 
-"MATH 151 LEC , 538 , Liwei Chen  , MWF , 9:10 , 10:00 , 2.1" , 
-"MATH 151 LEC , 539 , Liwei Chen  , MWF , 9:10 , 10:00 , 2.1" , 
-"MATH 151 LEC , 540 , Bret J. Lockhart , MWF , 8:00 , 8:50 , 3.6" , 
-"MATH 151 LEC , 541 , Bret J. Lockhart , MWF , 8:00 , 8:50 , 3.6" , 
-"MATH 151 LEC , 542 , Bret J. Lockhart , MWF , 8:00 , 8:50 , 3.6" , 
-"MATH 151 LEC , 543 , Bret J. Lockhart , MWF , 8:00 , 8:50 , 3.6" , 
-"MATH 151 LEC , 544 , Bret J. Lockhart , MWF , 8:00 , 8:50 , 3.6" , 
-"MATH 151 LEC , 545 , Bret J. Lockhart , MWF , 8:00 , 8:50 , 3.6" , 
-"MATH 151 LEC , 546 , Bret J. Lockhart , MWF , 8:00 , 8:50 , 3.6" , 
-"MATH 151 LEC , 547 , Bret J. Lockhart , MWF , 8:00 , 8:50 , 3.6" , 
-"MATH 151 LEC , 548 , Bret J. Lockhart , MWF , 8:00 , 8:50 , 3.6" , 
-"MATH 151 LEC , 549 , Bret J. Lockhart , MWF , 8:00 , 8:50 , 3.6" , 
-"MATH 151 LEC , 550 , Bret J. Lockhart , MWF , 8:00 , 8:50 , 3.6" , 
-"MATH 151 LEC , 551 , Bret J. Lockhart , MWF , 8:00 , 8:50 , 3.6" , 
-"MATH 151 LEC , 552 , Bret J. Lockhart , MWF , 8:00 , 8:50 , 3.6" , 
-"MATH 151 LEC , 553 , Bret J. Lockhart , MWF , 8:00 , 8:50 , 3.6" , 
-"MATH 151 LEC , 554 , Bret J. Lockhart , MWF , 8:00 , 8:50 , 3.6" , 
-"MATH 151 LEC , 555 , Bret J. Lockhart , MWF , 8:00 , 8:50 , 3.6" , 
-"MATH 151 LEC , 556 , Bret J. Lockhart , MWF , 8:00 , 8:50 , 3.6" , 
-"MATH 151 LEC , 557 , Bret J. Lockhart , MWF , 8:00 , 8:50 , 3.6" , 
-"MATH 151 LEC , 558 , Janice L. Epstein , TR , 9:35 , 10:50 , 2.6" , 
-"MATH 151 LEC , 559 , Janice L. Epstein , TR , 9:35 , 10:50 , 2.6" , 
-"MATH 151 LEC , 560 , Janice L. Epstein , TR , 9:35 , 10:50 , 2.6" , 
-"MATH 151 LEC , 561 , Constantin Onica , TR , 9:35 , 10:50 , 3.5" , 
-"MATH 151 LEC , 562 , Constantin Onica , TR , 9:35 , 10:50 , 3.5" , 
-"MATH 151 LEC , 563 , Constantin Onica , TR , 9:35 , 10:50 , 3.5" , 
-"MATH 151 LEC , 564 , Constantin Onica , TR , 9:35 , 10:50 , 3.5" , 
-"MATH 151 LEC , 565 , Constantin Onica , TR , 9:35 , 10:50 , 3.5" , 
-"MATH 151 LEC , 566 , Constantin Onica , TR , 9:35 , 10:50 , 3.5" , 
-"MATH 151 LEC , 567 , Constantin Onica , TR , 9:35 , 10:50 , 3.5" , 
-"MATH 151 LEC , 568 , Constantin Onica , TR , 9:35 , 10:50 , 3.5" , 
-"MATH 151 LEC , 569 , Constantin Onica , TR , 9:35 , 10:50 , 3.5" , 
-"MATH 151 LEC , 570 , Justin Cantu , TR , 2:20 , 3:35 , 5" , 
-"MATH 151 LEC , 571 , Justin Cantu , TR , 2:20 , 3:35 , 5" , 
-"MATH 151 LEC , 572 , Justin Cantu , TR , 2:20 , 3:35 , 5" , 
-"MATH 151 LEC , 573 , Justin Cantu , TR , 2:20 , 3:35 , 5" , 
-"MATH 151 LEC , 574 , Justin Cantu , TR , 2:20 , 3:35 , 5" , 
-"MATH 151 LEC , 575 , Justin Cantu , TR , 2:20 , 3:35 , 5" , 
-"MATH 151 LEC , 576 , Justin Cantu , TR , 2:20 , 3:35 , 5" , 
-"MATH 151 LEC , 577 , Justin Cantu , TR , 2:20 , 3:35 , 5" , 
-"MATH 151 LEC , 578 , Justin Cantu , TR , 2:20 , 3:35 , 5" , 
-"MATH 151 LEC , 579 , Bret J. Lockhart , MWF , 1:50 , 2:40 , 3.6" , 
-"MATH 151 LEC , 580 , Bret J. Lockhart , MWF , 1:50 , 2:40 , 3.6" , 
-"MATH 151 LEC , 581 , Bret J. Lockhart , MWF , 1:50 , 2:40 , 3.6" , 
-"MATH 151 LEC , 585 , Janice L. Epstein , TR , 8:30 , 9:15 , 2.6" , 
-"MATH 151 LEC , 586 , Janice L. Epstein , TR , 8:30 , 9:15 , 2.6" , 
-"MATH 151 LEC , 587 , Janice L. Epstein , TR , 8:30 , 9:15 , 2.6" , 
-"MATH 151 LAB , 201 , Andrea Bonito , MW , 8:00 , 8:50 , 3.4" , 
-"MATH 151 LAB , 202 , Andrea Bonito , MW , 9:10 , 10:00 , 3.4" , 
-"MATH 151 LAB , 205 , Chris Gartland , MW , 11:30 , 12:20 , 4.1" , 
-"MATH 151 LAB , 206 , Chris Gartland , MW , 12:40 , 1:30 , 4.1" , 
-"MATH 151 LAB , 501 , Sinjini Sengupta , TR , 8:25 , 9:15 , 4.8" , 
-"MATH 151 LAB , 502 , Sinjini Sengupta , TR , 9:35 , 10:25 , 4.8" , 
-"MATH 151 LAB , 503 , Sinjini Sengupta , TR , 11:10 , 12:00 , 4.8" , 
-"MATH 151 LAB , 504 , Sinjini Sengupta , TR , 12:45 , 1:35 , 4.8" , 
-"MATH 151 LAB , 505 , Sinjini Sengupta , TR , 2:20 , 3:10 , 4.8" , 
-"MATH 151 LAB , 506 , Sinjini Sengupta , TR , 3:55 , 4:45 , 4.8" , 
-"MATH 151 LAB , 507 , Sinjini Sengupta , TR , 5:05 , 5:55 , 4.8" , 
-"MATH 151 LAB , 508 , Sinjini Sengupta , TR , 8:25 , 9:15 , 4.8" , 
-"MATH 151 LAB , 509 , Sinjini Sengupta , TR , 5:05 , 5:55 , 4.8" , 
-"MATH 151 LAB , 510 , Sinjini Sengupta , TR , 8:25 , 9:15 , 4.8" , 
-"MATH 151 LAB , 511 , Sinjini Sengupta , TR , 9:35 , 10:25 , 4.8" , 
-"MATH 151 LAB , 512 , Sinjini Sengupta , TR , 11:10 , 12:00 , 4.8" , 
-"MATH 151 LAB , 513 , Sinjini Sengupta , TR , 12:45 , 1:35 , 4.8" , 
-"MATH 151 LAB , 514 , Sinjini Sengupta , TR , 2:20 , 3:10 , 4.8" , 
-"MATH 151 LAB , 515 , Sinjini Sengupta , TR , 3:55 , 4:45 , 4.8" , 
-"MATH 151 LAB , 516 , Sinjini Sengupta , TR , 5:30 , 6:20 , 4.8" , 
-"MATH 151 LAB , 517 , Sinjini Sengupta , TR , 8:25 , 9:15 , 4.8" , 
-"MATH 151 LAB , 518 , Sinjini Sengupta , TR , 3:55 , 4:45 , 4.8" , 
-"MATH 151 LAB , 519 , Justin Cantu , MW , 8:00 , 8:50 , 5" , 
-"MATH 151 LAB , 520 , Justin Cantu , MW , 9:10 , 10:00 , 5" , 
-"MATH 151 LAB , 521 , Justin Cantu , MW , 10:20 , 11:10 , 5" , 
-"MATH 151 LAB , 522 , Justin Cantu , MW , 11:30 , 12:20 , 5" , 
-"MATH 151 LAB , 523 , Justin Cantu , MW , 12:40 , 1:30 , 5" , 
-"MATH 151 LAB , 524 , Justin Cantu , MW , 1:50 , 2:40 , 5" , 
-"MATH 151 LAB , 525 , Justin Cantu , MW , 3:00 , 3:50 , 5" , 
-"MATH 151 LAB , 526 , Justin Cantu , MW , 4:10 , 5:00 , 5" , 
-"MATH 151 LAB , 527 , Justin Cantu , MW , 5:15 , 6:05 , 5" , 
-"MATH 151 LAB , 528 , Constantin Onica , MW , 8:00 , 8:50 , 3.5" , 
-"MATH 151 LAB , 529 , Constantin Onica , MW , 9:10 , 10:00 , 3.5" , 
-"MATH 151 LAB , 530 , Constantin Onica , MW , 10:20 , 11:10 , 3.5" , 
-"MATH 151 LAB , 531 , Constantin Onica , MW , 11:30 , 12:20 , 3.5" , 
-"MATH 151 LAB , 532 , Constantin Onica , MW , 12:40 , 1:30 , 3.5" , 
-"MATH 151 LAB , 533 , Constantin Onica , MW , 1:50 , 2:40 , 3.5" , 
-"MATH 151 LAB , 534 , Constantin Onica , MW , 3:00 , 3:50 , 3.5" , 
-"MATH 151 LAB , 535 , Constantin Onica , MW , 4:10 , 5:00 , 3.5" , 
-"MATH 151 LAB , 536 , Constantin Onica , MW , 1:50 , 2:40 , 3.5" , 
-"MATH 151 LAB , 537 , Liwei Chen  , TR , 12:45 , 1:35 , 2.1" , 
-"MATH 151 LAB , 538 , Liwei Chen  , TR , 2:20 , 3:10 , 2.1" , 
-"MATH 151 LAB , 539 , Liwei Chen  , TR , 3:55 , 4:45 , 2.1" , 
-"MATH 151 LAB , 540 , Bret J. Lockhart , TR , 8:25 , 9:15 , 3.6" , 
-"MATH 151 LAB , 541 , Bret J. Lockhart , TR , 9:35 , 10:25 , 3.6" , 
-"MATH 151 LAB , 542 , Bret J. Lockhart , TR , 11:10 , 12:00 , 3.6" , 
-"MATH 151 LAB , 543 , Bret J. Lockhart , TR , 12:45 , 1:35 , 3.6" , 
-"MATH 151 LAB , 544 , Bret J. Lockhart , TR , 2:20 , 3:10 , 3.6" , 
-"MATH 151 LAB , 545 , Bret J. Lockhart , TR , 3:55 , 4:45 , 3.6" , 
-"MATH 151 LAB , 546 , Bret J. Lockhart , TR , 8:25 , 9:15 , 3.6" , 
-"MATH 151 LAB , 547 , Bret J. Lockhart , TR , 9:35 , 10:25 , 3.6" , 
-"MATH 151 LAB , 548 , Bret J. Lockhart , TR , 5:30 , 6:20 , 3.6" , 
-"MATH 151 LAB , 549 , Bret J. Lockhart , TR , 8:25 , 9:15 , 3.6" , 
-"MATH 151 LAB , 550 , Bret J. Lockhart , TR , 9:35 , 10:25 , 3.6" , 
-"MATH 151 LAB , 551 , Bret J. Lockhart , TR , 11:10 , 12:00 , 3.6" , 
-"MATH 151 LAB , 552 , Bret J. Lockhart , TR , 12:45 , 1:35 , 3.6" , 
-"MATH 151 LAB , 553 , Bret J. Lockhart , TR , 2:20 , 3:10 , 3.6" , 
-"MATH 151 LAB , 554 , Bret J. Lockhart , TR , 3:55 , 4:45 , 3.6" , 
-"MATH 151 LAB , 555 , Bret J. Lockhart , TR , 8:25 , 9:15 , 3.6" , 
-"MATH 151 LAB , 556 , Bret J. Lockhart , TR , 3:55 , 4:45 , 3.6" , 
-"MATH 151 LAB , 557 , Bret J. Lockhart , TR , 5:05 , 5:55 , 3.6" , 
-"MATH 151 LAB , 558 , Janice L. Epstein , MW , 3:00 , 3:50 , 2.6" , 
-"MATH 151 LAB , 559 , Janice L. Epstein , MW , 4:10 , 5:00 , 2.6" , 
-"MATH 151 LAB , 560 , Janice L. Epstein , MW , 5:15 , 6:05 , 2.6" , 
-"MATH 151 LAB , 561 , Constantin Onica , MW , 8:00 , 8:50 , 3.5" , 
-"MATH 151 LAB , 562 , Constantin Onica , MW , 9:10 , 10:00 , 3.5" , 
-"MATH 151 LAB , 563 , Constantin Onica , MW , 10:20 , 11:10 , 3.5" , 
-"MATH 151 LAB , 564 , Constantin Onica , MW , 11:30 , 12:20 , 3.5" , 
-"MATH 151 LAB , 565 , Constantin Onica , MW , 12:40 , 1:30 , 3.5" , 
-"MATH 151 LAB , 566 , Constantin Onica , MW , 1:50 , 2:40 , 3.5" , 
-"MATH 151 LAB , 567 , Constantin Onica , MW , 3:00 , 3:50 , 3.5" , 
-"MATH 151 LAB , 568 , Constantin Onica , MW , 4:10 , 5:00 , 3.5" , 
-"MATH 151 LAB , 569 , Constantin Onica , MW , 5:15 , 6:05 , 3.5" , 
-"MATH 151 LAB , 570 , Justin Cantu , MW , 8:00 , 8:50 , 5" , 
-"MATH 151 LAB , 571 , Justin Cantu , MW , 9:10 , 10:00 , 5" , 
-"MATH 151 LAB , 572 , Justin Cantu , MW , 10:20 , 11:10 , 5" , 
-"MATH 151 LAB , 573 , Justin Cantu , MW , 11:30 , 12:20 , 5" , 
-"MATH 151 LAB , 574 , Justin Cantu , MW , 12:40 , 1:30 , 5" , 
-"MATH 151 LAB , 575 , Justin Cantu , MW , 1:50 , 2:40 , 5" , 
-"MATH 151 LAB , 576 , Justin Cantu , MW , 3:00 , 3:50 , 5" , 
-"MATH 151 LAB , 577 , Justin Cantu , MW , 4:10 , 5:00 , 5" , 
-"MATH 151 LAB , 578 , Justin Cantu , MW , 5:15 , 6:05 , 5" , 
-"MATH 151 LAB , 579 , Bret J. Lockhart , TR , 9:35 , 10:25 , 3.6" , 
-"MATH 151 LAB , 580 , Bret J. Lockhart , TR , 11:10 , 12:00 , 3.6" , 
-"MATH 151 LAB , 581 , Bret J. Lockhart , TR , 12:45 , 1:35 , 3.6" , 
-"MATH 151 LAB , 585 , Janice L. Epstein , MW , 10:20 , 11:10 , 2.6" , 
-"MATH 151 LAB , 586 , Janice L. Epstein , MW , 11:30 , 2:40 , 2.6" , 
-"MATH 151 LAB , 587 , Janice L. Epstein , MW , 1:50 , 2:40 , 2.6" , 
-"ENGL 104 , 501 , Janet Cho , MWF , 11:30 , 12:20 , 3.8" , 
-"ENGL 104 , 502 , Sirsha Nandi , MWF , 4:10 , 5:25 , 2.1" , 
-"ENGL 104 , 503 , Hai In Jo , TR , 9:35 , 10:50 , 2.3" , 
-"ENGL 104 , 504 , Soohyun Jeon , TR , 9:35 , 10:50 , 2.5" , 
-"ENGL 104 , 505 , Joseline M. Gonzalez , MWF , 10:20 , 11:10 , 2.7" , 
-"ENGL 104 , 506 , Alondra Ceballos , TR , 11:10 , 12:25 , 3.1" , 
-"ENGL 104 , 507 , Akshara Dafre , MWF , 8:00 , 8:50 , 2.1" , 
-"ENGL 104 , 508 , Jack Love , MWF , 8:00 , 8:50 , 3.6" , 
-"ENGL 104 , 509 , Jonahs Kneitly , TR , 8:00 , 9:15 , 3.2" , 
-"ENGL 104 , 511 , Michaela Baca , TR , 8:00 , 9:15 , 5" , 
-"ENGL 104 , 512 , Mary E. Perkins , TR , 8:00 , 9:15 , 3.4" , 
-"ENGL 104 , 513 , Hannah Elizabeth Bowling , TR , 9:35 , 10:50 , 3.2" , 
-"ENGL 104 , 514 , Michael Hessel Mial , MWF , 12:40 , 1:30 , 2.3" , 
-"ENGL 104 , 515 , Anneke Snyder , MWF , 12:40 , 1:30 , 3.7" , 
-"ENGL 104 , 517 , Zachary A. Riggins , MW , 4:10 , 5:25 , 1.8" , 
-"ENGL 104 , 518 , Christopher L. Manes , MWF , 1:50 , 2:40 , 3" , 
-"ENGL 104 , 520 , Christopher L. Manes , MWF , 3:00 , 3:50 , 3" , 
-"ENGL 104 , 521 , Christopher L. Manes , MWF , 10:20 , 11:10 , 3" , 
-"ENGL 104 , 522 , Christopher L. Manes , MWF , 11:30 , 12:20 , 3" , 
-"ENGL 104 , 523 , Dimple Nair , MWF , 12:40 , 1:30 , 4.3" , 
-"ENGL 104 , 524 , Dimple Nair , MWF , 1:50 , 2:40 , 4.3" , 
-"ENGL 104 , 525 , Dimple Nair , MWF , 3:00 , 3:50 , 4.3" , 
-"ENGL 104 , 526 , Michaela Baca , TR , 2:20 , 3:35 , 5" , 
-"ENGL 104 , 527 , Terri B. Pantuso , TR , 3:55 , 5:10 , 4.4" , 
-"ENGL 104 , 528 , Michael Hessel Mial , MWF , 1:50 , 2:40 , 2.3" , 
-"ENGL 104 , 529 , Frances M. Thielman , MWF , 3:00 , 3:50 , 3.1" , 
-"ENGL 104 , 530 , Melissa D. McCoul , MWF , 8:00 , 8:50 , 4.1" , 
-"ENGL 104 , 531 , Melissa D. McCoul , MWF , 9:10 , 10:00 , 4.1" , 
-"ENGL 104 , 533 , Melissa D. McCoul , MWF , 11:30 , 12:20 , 4.1" , 
-"ENGL 104 , 534 , Rich P. Cooper , MWF , 10:20 , 11:10 , 4.3" , 
-"ENGL 104 , 820 , Christopher L. Manes , MWF , 3:00 , 3:50 , 3" , 
-"ENGL 104 , 821 , Christopher L. Manes , MWF , 10:20 , 11:10 , 3" , 
-"ENGL 104 , 822 , Christopher L. Manes , MWF , 11:30 , 12:20 , 3" , 
-"CHEM 107 , 501 , Christian Hilty , MWF , 11:30 , 12:20 , 2.6" , 
-"CHEM 107 , 502 , Matthew T. Sheldon , MWF , 12:40 , 1:30 , 4" , 
-"CHEM 107 , 503 , Zachary M. Martinez , MWF , 1:50 , 2:40 , 3.2" , 
-"CHEM 107 , 504 , Zachary M. Martinez , MWF , 3:00 , 3:50 , 3.2" , 
-"CHEM 107 , 505 , Joanna Goodey , TR , 8:00 , 9:15 , 5" , 
-"CHEM 107 , 506 , Charles folden , TR , 11:10 , 12:25 , 4.1" , 
-"CHEM 117 , 501 , Alicia S. Altemose , M , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 502 , Alicia S. Altemose , M , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 503 , Alicia S. Altemose , M , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 504 , Alicia S. Altemose , M , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 505 , Alicia S. Altemose , M , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 506 , Alicia S. Altemose , M , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 507 , Alicia S. Altemose , M , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 508 , Alicia S. Altemose , M , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 509 , Alicia S. Altemose , M , 11:30 , 2:20 , 3.9" , 
-"CHEM 117 , 510 , Alicia S. Altemose , M , 11:30 , 2:20 , 3.9" , 
-"CHEM 117 , 511 , Alicia S. Altemose , M , 11:30 , 2:20 , 3.9" , 
-"CHEM 117 , 512 , Alicia S. Altemose , M , 11:30 , 2:20 , 3.9" , 
-"CHEM 117 , 513 , Alicia S. Altemose , M , 11:30 , 2:20 , 3.9" , 
-"CHEM 117 , 514 , Alicia S. Altemose , M , 11:30 , 2:20 , 3.9" , 
-"CHEM 117 , 515 , Alicia S. Altemose , M , 11:30 , 2:20 , 3.9" , 
-"CHEM 117 , 516 , Alicia S. Altemose , M , 11:30 , 2:20 , 3.9" , 
-"CHEM 117 , 517 , Alicia S. Altemose , M , 3:00 , 5:50 , 3.9" , 
-"CHEM 117 , 518 , Alicia S. Altemose , M , 3:00 , 5:50 , 3.9" , 
-"CHEM 117 , 519 , Alicia S. Altemose , M , 3:00 , 5:50 , 3.9" , 
-"CHEM 117 , 520 , Alicia S. Altemose , M , 3:00 , 5:50 , 3.9" , 
-"CHEM 117 , 521 , Alicia S. Altemose , M , 3:00 , 5:50 , 3.9" , 
-"CHEM 117 , 522 , Alicia S. Altemose , M , 3:00 , 5:50 , 3.9" , 
-"CHEM 117 , 523 , Alicia S. Altemose , M , 3:00 , 5:50 , 3.9" , 
-"CHEM 117 , 524 , Alicia S. Altemose , M , 3:00 , 5:50 , 3.9" , 
-"CHEM 117 , 525 , Alicia S. Altemose , M , 6:30 , 9:20 , 3.9" , 
-"CHEM 117 , 526 , Alicia S. Altemose , M , 6:30 , 9:20 , 3.9" , 
-"CHEM 117 , 527 , Alicia S. Altemose , M , 6:30 , 9:20 , 3.9" , 
-"CHEM 117 , 528 , Alicia S. Altemose , M , 6:30 , 9:20 , 3.9" , 
-"CHEM 117 , 529 , Alicia S. Altemose , M , 6:30 , 9:20 , 3.9" , 
-"CHEM 117 , 530 , Alicia S. Altemose , M , 6:30 , 9:20 , 3.9" , 
-"CHEM 117 , 531 , Alicia S. Altemose , T , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 532 , Alicia S. Altemose , T , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 533 , Alicia S. Altemose , T , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 534 , Alicia S. Altemose , T , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 535 , Alicia S. Altemose , T , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 536 , Alicia S. Altemose , T , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 537 , Alicia S. Altemose , T , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 538 , Alicia S. Altemose , T , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 539 , Alicia S. Altemose , T , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 540 , Alicia S. Altemose , T , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 541 , Alicia S. Altemose , T , 11:10 , 2:00 , 3.9" , 
-"CHEM 117 , 542 , Alicia S. Altemose , T , 11:10 , 2:00 , 3.9" , 
-"CHEM 117 , 543 , Alicia S. Altemose , T , 11:10 , 2:00 , 3.9" , 
-"CHEM 117 , 544 , Alicia S. Altemose , T , 11:10 , 2:00 , 3.9" , 
-"CHEM 117 , 545 , Alicia S. Altemose , T , 11:10 , 2:00 , 3.9" , 
-"CHEM 117 , 546 , Alicia S. Altemose , T , 11:10 , 2:00 , 3.9" , 
-"CHEM 117 , 547 , Alicia S. Altemose , T , 11:10 , 2:00 , 3.9" , 
-"CHEM 117 , 548 , Alicia S. Altemose , T , 11:10 , 2:00 , 3.9" , 
-"CHEM 117 , 549 , Alicia S. Altemose , T , 2:20 , 5:10 , 3.9" , 
-"CHEM 117 , 550 , Alicia S. Altemose , T , 2:20 , 5:10 , 3.9" , 
-"CHEM 117 , 551 , Alicia S. Altemose , T , 2:20 , 5:10 , 3.9" , 
-"CHEM 117 , 552 , Alicia S. Altemose , T , 2:20 , 5:10 , 3.9" , 
-"CHEM 117 , 553 , Alicia S. Altemose , T , 2:20 , 5:10 , 3.9" , 
-"CHEM 117 , 554 , Alicia S. Altemose , T , 2:20 , 5:10 , 3.9" , 
-"CHEM 117 , 555 , Alicia S. Altemose , T , 2:20 , 5:10 , 3.9" , 
-"CHEM 117 , 556 , Alicia S. Altemose , T , 2:20 , 5:10 , 3.9" , 
-"CHEM 117 , 557 , Alicia S. Altemose , W , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 558 , Alicia S. Altemose , W , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 559 , Alicia S. Altemose , W , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 560 , Alicia S. Altemose , W , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 561 , Alicia S. Altemose , W , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 562 , Alicia S. Altemose , W , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 563 , Alicia S. Altemose , W , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 564 , Alicia S. Altemose , W , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 565 , Alicia S. Altemose , W , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 566 , Alicia S. Altemose , W , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 567 , Alicia S. Altemose , W , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 568 , Alicia S. Altemose , W , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 569 , Alicia S. Altemose , W , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 570 , Alicia S. Altemose , W , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 571 , Alicia S. Altemose , W , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 572 , Alicia S. Altemose , W , 11:30 , 2:20 , 3.9" , 
-"CHEM 117 , 573 , Alicia S. Altemose , W , 11:30 , 2:20 , 3.9" , 
-"CHEM 117 , 574 , Alicia S. Altemose , W , 11:30 , 2:20 , 3.9" , 
-"CHEM 117 , 575 , Alicia S. Altemose , W , 11:30 , 2:20 , 3.9" , 
-"CHEM 117 , 576 , Alicia S. Altemose , W , 11:30 , 2:20 , 3.9" , 
-"CHEM 117 , 577 , Alicia S. Altemose , W , 11:30 , 2:20 , 3.9" , 
-"CHEM 117 , 578 , Alicia S. Altemose , W , 11:30 , 2:20 , 3.9" , 
-"CHEM 117 , 581 , Alicia S. Altemose , W , 3:00 , 5:50 , 3.9" , 
-"CHEM 117 , 582 , Alicia S. Altemose , W , 3:00 , 5:50 , 3.9" , 
-"CHEM 117 , 583 , Alicia S. Altemose , W , 3:00 , 5:50 , 3.9" , 
-"CHEM 117 , 584 , Alicia S. Altemose , W , 3:00 , 5:50 , 3.9" , 
-"CHEM 117 , 585 , Alicia S. Altemose , W , 3:00 , 5:50 , 3.9" , 
-"CHEM 117 , 586 , Alicia S. Altemose , W , 3:00 , 5:50 , 3.9" , 
-"CHEM 117 , 587 , Alicia S. Altemose , W , 3:00 , 5:50 , 3.9" , 
-"CHEM 117 , 588 , Alicia S. Altemose , W , 3:00 , 5:50 , 3.9" , 
-"CHEM 117 , 589 , Alicia S. Altemose , R , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 590 , Alicia S. Altemose , R , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 591 , Alicia S. Altemose , R , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 592 , Alicia S. Altemose , R , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 593 , Alicia S. Altemose , R , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 594 , Alicia S. Altemose , R , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 595 , Alicia S. Altemose , R , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 596 , Alicia S. Altemose , R , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 597 , Alicia S. Altemose , R , 11:10 , 2:00 , 3.9" , 
-"CHEM 117 , 598 , Alicia S. Altemose , R , 11:10 , 2:00 , 3.9" , 
-"CHEM 117 , 599 , Alicia S. Altemose , R , 11:10 , 2:00 , 3.9" , 
-"CHEM 117 , 600 , Alicia S. Altemose , R , 11:10 , 2:00 , 3.9" , 
-"CHEM 117 , 601 , Alicia S. Altemose , R , 11:10 , 2:00 , 3.9" , 
-"CHEM 117 , 602 , Alicia S. Altemose , R , 11:10 , 2:00 , 3.9" , 
-"CHEM 117 , 605 , Alicia S. Altemose , R , 2:20 , 5:10 , 3.9" , 
-"CHEM 117 , 606 , Alicia S. Altemose , R , 2:20 , 5:10 , 3.9" , 
-"CHEM 117 , 607 , Alicia S. Altemose , R , 2:20 , 5:10 , 3.9" , 
-"CHEM 117 , 608 , Alicia S. Altemose , R , 2:20 , 5:10 , 3.9" , 
-"CHEM 117 , 609 , Alicia S. Altemose , R , 2:20 , 5:10 , 3.9" , 
-"CHEM 117 , 610 , Alicia S. Altemose , R , 2:20 , 5:10 , 3.9" , 
-"CHEM 117 , 611 , Alicia S. Altemose , R , 2:20 , 5:10 , 3.9" , 
-"CHEM 117 , 612 , Alicia S. Altemose , R , 2:20 , 5:10 , 3.9" , 
-"CHEM 117 , 613 , Alicia S. Altemose , F , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 614 , Alicia S. Altemose , F , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 615 , Alicia S. Altemose , F , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 616 , Alicia S. Altemose , F , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 617 , Alicia S. Altemose , F , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 618 , Alicia S. Altemose , F , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 619 , Alicia S. Altemose , F , 8:00 , 10:50 , 3.9" , 
-"CHEM 117 , 620 , Alicia S. Altemose , F , 8:00 , 10:50 , 3.9"
-]
-        
+        var c = document.getElementById("day")
+        var val = c.value
 
-        
-        for(i = 0; i<dat.length; i++){
-            var temp = dat[i] 
-            if(temp.includes(clas)){
-                console.log(clas)
-                if(temp.includes("M") && days.includes("MON")){
-                    filt.push(temp)
-                }
-                else if(temp.includes("T") && days.includes("TUE")){
-                    filt.push(temp)
-                }
-                else if(temp.includes("W") && days.includes("WED")){
-                    filt.push(temp)
-                }
-                else if(temp.includes("R") && days.includes("THU")){
-                    filt.push(temp)
-                }
-                else if(temp.includes("F") && days.includes("FRI")){
-                    filt.push(temp)
-            }
-            
-        var html = "";  
-        for (var j =0; j < filt.length; j++) {
-            html += "<li>" + filt[j]+ "</li>";
-            }
-
-        document.getElementById("yay").innerHTML = ""
-
-           document.getElementById("yay").innerHTML = html
-        
-
-
-
-        }
-}
-
-}
-
-
-
-
+    }
 
 
     
@@ -575,6 +114,6 @@
 	<!-- Font Awesome -->
 	<script src="js/all.min.js"></script>
 
-
+    
 </body>
 </html>
