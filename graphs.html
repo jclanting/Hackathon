@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/stl.css">
+    <!-- Bootstrap 4.5 CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+   
+	<!-- Mobile Friendly -->
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<!-- This code segment titles our app and styles our css -->
+	<title>Prof Finder</title>
+    <link rel="shortcut icon" href="https://i.imgur.com/lmHW6Pt.png">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+	<div class="top-bar">
+		<div class="container">
+			<div class="col-0 center">
+				<p><a href="https://howdy.tamu.edu/uPortal/normal/render.uP" target="_blank" class="topic">Prof Finder</a></p>
+			</div>
+		</div>
+	</div>
+
+   
+    
+    <!-- Navigation -->
+	<!-- This creates our drop down menu so that our users are more capable to navigate through the app without any outside help-->
+	<!---->
+    <nav class="navbar bg-dark navbar-dark navbar-expand-lg">
+		<div class="container">
+			<a href="hack-a-thon.html" class="navbar-brand"><img src="https://1000logos.net/wp-content/uploads/2022/02/Texas-AM-Aggies-logo.png" alt="Logo" title="Logo"></a>
+			<button class="navbar-toggler" type ="button" data-toggle="collapse" data-target="#navbarResponsive">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item"><a href="hack-a-thon.html" class="nav-link">Home&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+
+                    <li class="nav-item"><a href="about.html" class="nav-link">About&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                    
+                    <li class="nav-item"><a href="class_search.html" class="nav-link">Class Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+
+					<li class="nav-item"><a href="graphs.html" class="nav-link">Graphs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+				</ul>
+
+			</div>
+		
+		</div>
+	</nav>
+
+    <label for="classes">Choose a class that you want to see the graph for:</label>
+
+    <select name="classes" id="class">
+      <option value="ENGR 102">ENGR 102</option>
+      <option value="MATH 151 LEC">MATH 151 LEC</option>
+      <option value="CHEM 107">CHEM 107</option>
+      <option value="CHEM 117">CHEM 117</option>
+      <option value="ENGL 104">ENGL 104</option>
+    </select>
+    <button type="submit" onclick="grabClassGraph()">Submit</button>
+    <img src="https://imgur.com/1eyGNP2" alt="" height="600rem" width="1500" class="center" style="display: block; margin-left: auto;
+    margin-right: auto;
+    width: 50%;">
+    <br>
+    <br>
+      <script text="text/javascript">
+        function grabClassGraph(){
+            var c = document.getElementById("class")
+            var val = c.value 
+            if (val=="ENGR 102") {
+                document.getElementById('ENGR102')
+                    .style.display = "none";
+            }
+        }
+    </script>
+
+
+	<!-- End Navigation -->
+
+     <!-- jQuery -->
+	<script src="js/jquery-3.5.1.min.js"></script>
+	<!-- Bootstrap 4.5 JS -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Popper JS -->
+	<script src="js/popper.min.js"></script>
+	<!-- Font Awesome -->
+	<script src="js/all.min.js"></script>
+
+    
+</body>
+</html>
+    
