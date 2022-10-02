@@ -1,1 +1,69 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+    <link rel="stylesheet" href="css/stl.css">
+    <!-- Bootstrap 4.5 CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+   
+	<!-- Mobile Friendly -->
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<!-- This code segment titles our app and styles our css -->
+	<title>Prof Finder</title>
+    <link rel="shortcut icon" href="https://i.imgur.com/lmHW6Pt.png">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+	<div class="top-bar">
+		<div class="container">
+			<div class="col-0 center">
+				<p><a href="https://howdy.tamu.edu/uPortal/normal/render.uP" target="_blank" class="topic">Prof Finder</a></p>
+			</div>
+		</div>
+	</div>
+
+    <!-- Navigation -->
+	<!-- This creates our drop down menu so that our users are more capable to navigate through the app without any outside help-->
+	<!---->
+    <nav class="navbar bg-dark navbar-dark navbar-expand-lg">
+		<div class="container">
+			<a href="hack-a-thon.html" class="navbar-brand"><img src="https://1000logos.net/wp-content/uploads/2022/02/Texas-AM-Aggies-logo.png" alt="Logo" title="Home"></a>
+			<button class="navbar-toggler" type ="button" data-toggle="collapse" data-target="#navbarResponsive">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item"><a href="hack-a-thon.html" class="nav-link">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+
+                    <li class="nav-item"><a href="about.html" class="nav-link">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;About&nbsp;</a></li>
+                    
+                    <li class="nav-item"><a href="hack-a-thon.html" class="nav-link">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Class Search&nbsp;&nbsp;</a></li>
+
+					<li class="nav-item"><a href="graphs.html" class="nav-link">&nbsp;&nbsp;&nbsp;&nbsp;Graphs&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+
+					<li class="nav-item"><a href="sources.html" class="nav-link">&nbsp;&nbsp;&nbsp;&nbsp;Sources&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+				</ul>
+			</div>
+        </div>
+    </nav>
+        <center text="#500000", style="font-size:18px">  
+            <br><br><br><br>
+            <a href="https://anex.us/grades/">Our Graphs!</a>
+            <br><br><br><br>
+            <a href="https://imgur.com/upload">Our Images!</a>
+            <br><br><br><br>
+            <a href="https://compassxe-ssb.tamu.edu/StudentRegistrationSsb/ssb/term/termSelection?mode=search">Our Database!</a>
+            <br><br><br><br>
+            <a href="https://www.ratemyprofessors.com/">Our Professor Ratings!</a>
+            <br><br><br><br>
+        </center>   
+</body>
+</html>
