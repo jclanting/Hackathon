@@ -14,7 +14,7 @@
 
 	<!-- This code segment titles our app and styles our css -->
 	<title>Prof Finder</title>
-    <link rel="shortcut icon" href="https://i.imgur.com/lmHW6Pt.png">
+    <link rel="shortcut icon" href="https://i.imgur.com/lLNwCFi.png">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
 </head>
 
@@ -24,7 +24,9 @@
 	<div class="top-bar">
 		<div class="container">
 			<div class="col-0 center">
-				<p><a href="https://howdy.tamu.edu/uPortal/normal/render.uP" target="_blank" class="topic">Prof Finder</a></p>
+				<p><img src="https://i.imgur.com/BI3NjSo.png" target="_blank" class="topic" style="
+					width: 20%;
+					height:20%;"><br><br>></p>
 			</div>
 		</div>
 	</div>
@@ -36,7 +38,7 @@
 	<!---->
     <nav class="navbar bg-dark navbar-dark navbar-expand-lg">
 		<div class="container">
-			<a href="hack-a-thon.html" class="navbar-brand"><img src="https://1000logos.net/wp-content/uploads/2022/02/Texas-AM-Aggies-logo.png" alt="Logo" title="Logo"></a>
+			<a href="hack-a-thon.html" class="navbar-brand"><img src="https://i.imgur.com/ZLRHswJ.png" alt="Logo" title="Home"></a>
 			<button class="navbar-toggler" type ="button" data-toggle="collapse" data-target="#navbarResponsive">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -51,8 +53,7 @@
 
 					<li class="nav-item"><a href="graphs.html" class="nav-link">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Graphs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
 
-                
-                </ul>
+				</ul>
 
 			</div>
 		
@@ -92,15 +93,21 @@
   <br>
   <label for="nums">Choose the section number you want to add:</label>
   <input type="text" name="nums" id="sec">
-  <button type="submit" onclick="grabSec()">Submit</button>
+  <button type="submit">Submit</button>
 
-  
-  <p1 id="containers"> 
-
-
-
-  </p1>
-
+  <!--
+  <div class="container">
+    <div class="box">
+        <p><strong>CHEM 107</strong></p>
+        <br>
+        <div class="info">
+            <p id="nay">
+        </p>
+            <br><br><br><br><br><br><br>
+        </div>
+    </div>
+  </div>
+-->
 
   <script text="text/javascript">
 
@@ -571,14 +578,10 @@
   </script>
 
 
-
+<!--
 <script>
     function grabSec(){
-        f = document.getElementById("sec")
-        num = f.value
-        var c = document.getElementById("class")
-        var clas = (c.value).toUpperCase()
-
+        f = document.getElementById("sec").value()
         var dat = [
         "ENGR 102 , 203 , Craig M. Spears , MW , 12:40 , 2:30 , 4.5 , https://engineering.tamu.edu/_files/_images/_profile-images/001_spe.jpg" , 
 "ENGR 102 , 207 , Elissa T. Morris , MF , 10:20 , 12:10 , 5 , https://engineering.tamu.edu/_files/_images/_profile-images/COE-profile-Elissa-Morris-28April2021.jpg" , 
@@ -1003,7 +1006,7 @@
 ]
         var temp = "";
         for(i = 0 ; i<dat.length; i++){
-            if (dat[i].includes(num) && dat[i].toUpperCase().includes(clas)){
+            if (dat[i].includes(f)){
                 temp = dat[i]
             }
         }
@@ -1016,32 +1019,12 @@
         var end = arr[5]
         var rate = arr[6]
         var link = arr[7]
-        console.log(course)
-        console.log(section)
-        console.log(prof)
-        console.log(day)
-        console.log(start)
 
-        document.getElementById("containers").innerHTML += 
-        "<div class=\"boxs\">"+
-            "<p><strong>"+course+"</strong></p>"+
-            "<br>"+
-            "<div class=\"infos\">"+
-                "<p>"+
-                "<br>"+
-                "Section Number: "+section+ "<br>"+
-                "Professor: "+prof+ "<br>"+
-                "DAYS: "+day+ "<br>"+
-                "Start time: "+start+ "<br>"+
-                "End time: "+end+ "<br>"+
-                "Rating: "+rate+ "<br></p>"+
-                "<img class = rad src="+link+">"+
-                "<br><br><br><br><br><br><br>"+
-            "</div>"+
-        "</div>"
+        document.getElementById("nay").innerHTML = "<br>" + section+"<br>" + prof+"<br>" + day +"<br>" + start +"<br>" + end + "<br>" + rate +"<img src=\""+link+"\">"
+
     }
 </script>
-
+-->
 
 
 
