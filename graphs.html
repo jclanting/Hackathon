@@ -61,24 +61,78 @@
 
     <select name="classes" id="class">
       <option value="ENGR 102">ENGR 102</option>
-      <option value="MATH 151 LEC">MATH 151 LEC</option>
+      <option value="MATH 151">MATH 151</option>
       <option value="CHEM 107">CHEM 107</option>
       <option value="CHEM 117">CHEM 117</option>
       <option value="ENGL 104">ENGL 104</option>
     </select>
     <button type="submit" onclick="grabClassGraph()">Submit</button>
-    <img src="https://imgur.com/1eyGNP2" alt="" height="600rem" width="1500" class="center" style="display: block; margin-left: auto;
-    margin-right: auto;
-    width: 50%;">
+
+    <div class="graphs">
+        <img id="ENGR 102" src="https://i.imgur.com/1eyGNP2.png">
+        <img id="MATH 151" src="https://i.imgur.com/69nWzCb.png" style = "margin-top: -649px">
+        <img id="CHEM 107" src="https://i.imgur.com/hkwlNqQ.png" style = "margin-top: -679px">
+        <img id="CHEM 117" src="https://i.imgur.com/d0GBqyX.png" style = "margin-top: -729px">
+        <img id="ENGL 104" src="https://i.imgur.com/U1KDvv7.png" style = "margin-top: -749px">
+    </div>
     <br>
     <br>
       <script text="text/javascript">
-        function grabClassGraph(){
+        var engr = document.getElementById("ENGR 102");
+        var math = document.getElementById("MATH 151");
+        var chem_107 = document.getElementById("CHEM 107");
+        var chem_117 = document.getElementById("CHEM 117");
+        var engl = document.getElementById("ENGL 104");
+        
+        math.style.visibility = 'hidden';
+        engr.style.visibility = 'hidden';
+        chem_107.style.visibility = 'hidden';
+        chem_117.style.visibility = 'hidden';
+        engl.style.visibility = 'hidden';
+
+        function grabClassGraph()
+        {
             var c = document.getElementById("class")
             var val = c.value 
-            if (val=="ENGR 102") {
-                document.getElementById('ENGR102')
-                    .style.display = "none";
+            if(val=="MATH 151")
+            {
+                math.style.visibility = 'visible';
+                engr.style.visibility = 'hidden';
+                chem_107.style.visibility = 'hidden';
+                chem_117.style.visibility = 'hidden';
+                engl.style.visibility = 'hidden';
+            }
+            if (val=="ENGR 102") 
+            {
+                engr.style.visibility = 'visible';
+                math.style.visibility = 'hidden';
+                chem_107.style.visibility = 'hidden';
+                chem_117.style.visibility = 'hidden';
+                engl.style.visibility = 'hidden';
+            }
+            if(val=="CHEM 107")
+            {
+                chem_107.style.visibility = 'visible'
+                math.style.visibility = 'hidden';
+                engr.style.visibility = 'hidden';
+                chem_117.style.visibility = 'hidden';
+                engl.style.visibility = 'hidden';
+            }
+            if(val=="CHEM 117")
+            {
+                chem_117.style.visibility = 'visible'
+                math.style.visibility = 'hidden';
+                engr.style.visibility = 'hidden';
+                chem_107.style.visibility = 'hidden';
+                engl.style.visibility = 'hidden';
+            }
+            if(val=="ENGL 104")
+            {
+                engl.style.visibility = 'visible'
+                math.style.visibility = 'hidden';
+                engr.style.visibility = 'hidden';
+                chem_107.style.visibility = 'hidden';
+                chem_117.style.visibility = 'hidden';
             }
         }
     </script>
@@ -98,4 +152,3 @@
     
 </body>
 </html>
-    
