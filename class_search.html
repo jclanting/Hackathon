@@ -66,7 +66,10 @@
   <option value="CHEM 117">CHEM 117</option>
   <option value="ENGL 104">ENGL 104</option>
 </select>
+<button type="submit" onclick="grabclass()">Submit</button>
 
+<br>
+<br>
 
 <select name="days" id="day">
     <option value="Monday">Monday</option>
@@ -75,6 +78,24 @@
     <option value="Thursday">Thursday</option>
     <option value="Friday">Friday</option>
   </select>
+  <button type="submit" onclick="grabdays()">Submit</button>
+
+  <script text="text/javascript">
+    function grabclass(){
+        var c = document.getElementById("class")
+        var val = c.value
+
+    }
+
+    function grabdays(){
+        var c = document.getElementById("day")
+        var val = c.value
+
+    }
+
+    
+    
+  </script>
 
 
 
