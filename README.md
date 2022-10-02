@@ -7,4 +7,5 @@ Howdy! As fellow students, we understand how crucial it is that you get the perf
 
 <h2>Links</h2>
 <ul>
+  <li><a href="https://tinyurl.com/yzx2shp4">Prof Find Website</li>
   <li><a href="https://tamuhack.com/hh">Howdy Hack 2022</li>
