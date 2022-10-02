@@ -1,0 +1,103 @@
+.top-bar {
+    background: #500000;
+    height: 2.8rem;
+    padding: .5rem 0;
+    height: 80px;
+  }
+  
+  .top-bar a{
+    color:white;
+    text-decoration: none;
+    font-size: 1.1rem;
+  }
+  
+  body {
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+    color: #500000;
+  }
+  
+  .center {
+    text-align: center;
+  }
+
+  .review_container {
+    display: flex;
+    text-align: center;
+    font-size: 24px;
+    border: 1px solid black;
+  }
+
+  .text {
+    flex: 1;
+    padding: 2px;
+    border-right: 1px solid black;
+  }
+  .bg-dark {
+    background-color: #500000;
+  }
+
+  .pics_container {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .name {
+    padding: 10px;
+  }
+
+.navbar-brand img{
+  height:6rem;
+}
+.navbar {
+ font-size: 1.5rem;
+ font-weight: 600;
+ letter-spacing: .1rem;
+ box-shadow: 0 .5rem .5rem rgba(0,0,0,.1);
+ z-index: 1;
+ background-color: #500000;
+}
+.nav-item{
+ padding: .5rem;
+}
+
+.nav-link{
+ color: white!important;
+}
+
+.nav-link.active,.nav-link:hover{
+ color: #500!important;
+}
+
+/*============= CAROUSEL =============*/
+
+#carousel {
+  box-shadow: 0 1rem 1rem rgba(0,0,0,.1);
+}
+.carousel-inner{
+  max-height: 45rem!important;
+  border-top: 5px solid #500000;
+  border-bottom: 5px solid #500000;
+  border-left: 4px solid #500000;
+  border-right: 4px solid #500000;
+}
+.carousel-item-next, .carousel-item-prev, .carousel-item.active{
+  transition: transform 1.2s ease;
+}
+
+.impoe{
+  color: orange;
+  font-weight: 600;
+  font-size:1.37em;
+}
+p{
+  font-size: .1rem;
+}
+.topic{
+  text-decoration: none;
+  font-size: .2rem;
+}
+/*---Change Carousel Transition Speed --*/
+
+
+/*-- Carousel Content --*/
